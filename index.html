@@ -240,9 +240,25 @@
         <div class="max-w-5xl mx-auto px-6 py-20">
           <h2 class="font-display text-3xl text-ink mb-3">Proyek</h2>
 
+          <!-- Filter -->
+          <div id="proyek-filter" class="flex flex-wrap gap-2 mb-8">
+          <button type="button" data-filter="semua" aria-pressed="true"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">Semua</button>
+          <button type="button" data-filter="dashboard" aria-pressed="false"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">Dashboard</button>
+          <button type="button" data-filter="data" aria-pressed="false"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">Data</button>
+          <button type="button" data-filter="penjualan" aria-pressed="false"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">Penjualan</button>
+          <button type="button" data-filter="sdm" aria-pressed="false"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">SDM</button>
+          <button type="button" data-filter="keuangan" aria-pressed="false"
+            class="filter-btn font-mono text-xs uppercase tracking-wide border border-line rounded-full px-3 py-1.5 transition">Keuangan</button>
+        </div>
+
           <div id="proyek-track" class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6 items-stretch">
             <!-- Proyek 01 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="dashboard keuangan" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/Dashboard anggaran wisuda.png" alt="Dashboard anggaran wisuda img" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -257,7 +273,10 @@
                 </div>
               </div>
               <h3 class="font-display text-lg sm:text-xl text-ink mb-2">Dashboard Anggaran Wisuda</h3>
-              <p class="text-ink/70 text-sm leading-relaxed mb-4">Deskripsi singkat proyek: apa yang dikerjakan, konteksnya, dan hasil/dampaknya.</p>
+              <p class="text-ink/70 text-sm leading-relaxed mb-4">
+                Membuat dashboard Google Sheets untuk memantau pengeluaran persiapan wisuda. Mengelompokkan setiap transaksi ke 12 kategori, memisahkan pengeluaran wisuda dan non-wisuda, lalu merangkumnya dengan pivot table menjadi total
+                pengeluaran, tren harian, dan rincian per kategori yang dapat disaring dengan slicer. Hasilnya, seluruh transaksi terangkum dalam satu halaman sehingga rekap pengeluaran tidak perlu dihitung ulang secara manual.
+              </p>
               <div class="flex flex-wrap gap-2 mt-auto">
                 <span class="font-mono text-[11px] text-ink/60 border border-line rounded-full px-2.5 py-1">Dashboard</span>
                 <span class="font-mono text-[11px] text-ink/60 border border-line rounded-full px-2.5 py-1">Diagram</span>
@@ -267,7 +286,7 @@
             </div>
 
             <!-- Proyek 02 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="data" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/dataset ta.png" alt="Preview Cleaning Dataset Tanaman" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -293,7 +312,7 @@
             </div>
 
             <!-- Proyek 03 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="penjualan" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/penjualan.png" alt="Preview Sistem Administrasi Penjualan Distributor Sembako" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -320,7 +339,7 @@
             </div>
 
             <!-- Proyek 04 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="penjualan" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/simulasi pesanan percetakan.png" alt="Preview Simulasi Sistem Pencatatan Pesanan Percetakan" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -348,7 +367,7 @@
             </div>
 
             <!-- Proyek 05 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="sdm" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/cuti karyawan.png" alt="Rekap cuti karyawan img" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -377,7 +396,7 @@
             </div>
 
             <!-- Proyek 06 -->
-            <div class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
+            <div data-kategori="keuangan" class="relative bg-white/70 border border-line rounded-xl p-4 sm:p-6 hover:shadow-lg transition group h-full flex flex-col">
               <div class="relative rounded-lg overflow-hidden border border-line mb-4">
                 <img src="img/reimbursement-preview.png" alt="Preview Database Reimbursement Karyawan" class="w-full h-auto object-cover" />
                 <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/70 transition duration-300 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
@@ -704,64 +723,88 @@
 
       (function () {
         const perPage = 4;
-        const track = document.getElementById("proyek-track");
-        const items = Array.from(track.children);
-        const total = items.length;
+        const idleClasses = ['text-ink/60'];
+        const activeClasses = ['bg-ink', 'text-paper', 'border-ink'];
 
-        // Kalau proyek 4 atau kurang, tidak perlu pagination sama sekali
-        if (total <= perPage) return;
+        const track = document.getElementById('proyek-track');
+        const cards = Array.from(track.querySelectorAll(':scope > [data-kategori]'));
+        const filterBtns = document.querySelectorAll('#proyek-filter .filter-btn');
 
-        const pageCount = Math.ceil(total / perPage);
+        const pagination = document.getElementById('proyek-pagination');
+        const prevBtn = document.getElementById('proyek-prev');
+        const nextBtn = document.getElementById('proyek-next');
+        const dotsContainer = document.getElementById('proyek-dots');
+
+        let filter = 'semua';
         let current = 1;
 
-        const pagination = document.getElementById("proyek-pagination");
-        const prevBtn = document.getElementById("proyek-prev");
-        const nextBtn = document.getElementById("proyek-next");
-        const dotsContainer = document.getElementById("proyek-dots");
-
-        pagination.classList.remove("hidden");
-        pagination.classList.add("flex");
-
-        for (let i = 1; i <= pageCount; i++) {
-          const dot = document.createElement("button");
-          dot.type = "button";
-          dot.setAttribute("aria-label", "Ke halaman proyek " + i);
-          dot.className = "proyek-dot w-2 h-2 rounded-full bg-line transition";
-          dot.addEventListener("click", () => {
-            current = i;
-            render();
-          });
-          dotsContainer.appendChild(dot);
+        function getFiltered() {
+          return cards.filter((card) => filter === 'semua' || card.dataset.kategori.split(' ').includes(filter));
         }
-        const dots = document.querySelectorAll(".proyek-dot");
+
+        function renderFilterButtons() {
+          filterBtns.forEach((b) => {
+            const on = b.dataset.filter === filter;
+            b.setAttribute('aria-pressed', on);
+            b.classList.remove(...activeClasses, ...idleClasses);
+            b.classList.add(...(on ? activeClasses : idleClasses));
+          });
+        }
 
         function render() {
-          items.forEach((item, idx) => {
-            const page = Math.floor(idx / perPage) + 1;
-            item.classList.toggle("hidden", page !== current);
-          });
-          dots.forEach((d, i) => {
-            d.classList.toggle("bg-folder", i + 1 === current);
-            d.classList.toggle("w-6", i + 1 === current);
-            d.classList.toggle("bg-line", i + 1 !== current);
-          });
+          const filtered = getFiltered();
+          const pageCount = Math.max(1, Math.ceil(filtered.length / perPage));
+          if (current > pageCount) current = pageCount;
+
+          const start = (current - 1) * perPage;
+          const visible = new Set(filtered.slice(start, start + perPage));
+          cards.forEach((card) => card.classList.toggle('hidden', !visible.has(card)));
+
+          // Pagination hanya muncul kalau hasil filter lebih dari 1 halaman
+          const showPagination = filtered.length > perPage;
+          pagination.classList.toggle('hidden', !showPagination);
+          pagination.classList.toggle('flex', showPagination);
+
+          // Titik indikator dibuat ulang sesuai jumlah halaman
+          dotsContainer.innerHTML = '';
+          for (let i = 1; i <= pageCount; i++) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', 'Ke halaman proyek ' + i);
+            dot.className = 'proyek-dot h-2 rounded-full transition ' + (i === current ? 'bg-folder w-6' : 'bg-line w-2');
+            dot.addEventListener('click', () => {
+              current = i;
+              render();
+            });
+            dotsContainer.appendChild(dot);
+          }
+
           prevBtn.disabled = current === 1;
           nextBtn.disabled = current === pageCount;
         }
 
-        prevBtn.addEventListener("click", () => {
+        filterBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            filter = btn.dataset.filter;
+            current = 1; // balik ke halaman 1 setiap ganti filter
+            renderFilterButtons();
+            render();
+          });
+        });
+
+        prevBtn.addEventListener('click', () => {
           if (current > 1) {
             current--;
             render();
           }
         });
-        nextBtn.addEventListener("click", () => {
-          if (current < pageCount) {
-            current++;
-            render();
-          }
+
+        nextBtn.addEventListener('click', () => {
+          current++;
+          render();
         });
 
+        renderFilterButtons();
         render();
       })();
 
@@ -795,6 +838,9 @@
         window.addEventListener("scroll", setActiveLink);
         window.addEventListener("load", setActiveLink);
       })();
+
+      
+
     </script>
   </body>
 </html>
